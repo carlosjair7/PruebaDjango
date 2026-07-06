@@ -1,0 +1,45 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} Comentarios {% endblock %}
+
+{% block nombre_seccion %}Comentarios{% endblock %}
+
+
+{% block breadcrumb %} Lista de Comentarios {% endblock %}
+{% block encabezado_pagina %}
+    <div class="page-header">
+    <div class="page-title">
+        <h3>Comentarios
+            <small>Lista de Comentarios</small>
+        </h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<div class="panel panel-default">
+    
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Mensaje PrimerCommit</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in comentarios %}
+                <tr>
+                    <td>{{ c.usuario }}</td>
+                    <td>{{ c.mensaje }}</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
