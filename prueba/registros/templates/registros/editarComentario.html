@@ -1,0 +1,44 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %}Editar Comentario{% endblock %}
+
+{% block encabezado_pagina %}
+<div class="page-header">
+    <div class="page-title">
+        <h3>
+            Editar Comentario
+            <small>Modificar comentario</small>
+        </h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" name="usuario" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea name="mensaje" class="form-control" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Guardar
+            </button>
+
+            <a href="{% url 'ConsultaContacto' %}" class="btn btn-primary">
+                Cancelar
+            </a>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

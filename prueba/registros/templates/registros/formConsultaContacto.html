@@ -1,0 +1,46 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} formConsultaContacto {% endblock %}
+
+{% block nombre_seccion %}formConsultaContacto{% endblock %}
+
+
+{% block breadcrumb %} Lista de Comentarios {% endblock %}
+{% block encabezado_pagina %}
+    <div class="page-header">
+    <div class="page-title">
+        <h3>formConsultaContacto
+            <small>Lista de Comentarios</small>
+        </h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<div class="panel panel-default">
+    
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Mensaje</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comentario in comentarios %}
+                <tr>
+                    <td>{{ comentario.usuario }}</td>
+                    <td>{{ comentario.mensaje }}</td>
+                    <td><a href="{% url 'Editar' comentario.id %}">Editar</a></td>
+                    <!--<td><a href="{% url 'ConsultaIndividual' comentario.id %}">Editar</a></td>!-->
+                    <td> <a href="{%url 'Eliminar' comentario.id%}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

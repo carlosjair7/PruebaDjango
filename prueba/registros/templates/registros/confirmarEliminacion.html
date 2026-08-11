@@ -1,0 +1,49 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} Confirmar Eliminación {% endblock %}
+
+{% block encabezado_pagina %}
+<div class="page-header">
+    <div class="page-title">
+        <h3>
+            Eliminar Comentario
+            <small>Confirmar eliminación</small>
+        </h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="callout callout-danger fade in">
+                <h5>Eliminar Comentario</h5>
+                <p>¿Está seguro de que desea <strong>eliminar</strong> este comentario?</p>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ comentario.usuario }}</td>
+                        <td>{{ comentario.mensaje }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+            <a href="{% url 'ConsultaContacto' %}" class="btn btn-primary">Cancelar</a>
+
+        </div>
+    </div>
+</form>
+{% endblock %}

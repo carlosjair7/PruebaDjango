@@ -28,8 +28,35 @@ urlpatterns = [
         path('formulario', views.formulario, name='Formulario'),
         path('ejemplo', views.ejemplo, name='Ejemplo'),
         path('registrar/',views_registros.registrar, name="Registrar"),
-        path('consultaContacto', views_registros.consultaContacto, name='ConsultaContacto')
-        
+        path('consultaContacto', views_registros.consultaContacto, name='ConsultaContacto'),
+        path('eliminarComentario/<int:id>/',views_registros.eliminarComentarioContacto, name='Eliminar'),
+        path('editarComentario/<int:id>/', views_registros.editarComentarioContacto, name='Editar'),
+        path('formEditarComentario/<int:id>/', views_registros.consultarComentarioIndividual, name='ConsultaIndividual'),
+        path('consultas', views_registros.consultas, name='Consultas'),
+        path('consultas1', views_registros.consultar1, name='Consultas1'),
+        path('consultas2', views_registros.consultar2, name='Consultas2'),
+        path('consultas3', views_registros.consultar3, name='Consultas3'),
+        path('consultas4', views_registros.consultar4, name='Consultas4'),
+        path('consultas5', views_registros.consultar5, name='Consultas5'),
+        path('consultas6', views_registros.consultar6, name="Consultar6"),
+        path('consultas7', views_registros.consultar7, name="Consultas7"),
+        path('consultas8', views_registros.consultar8, name="Consultas8"),
+        path('consultasSQL', views_registros.consultasSQL, name="sql"),
+        #Comentarios Contacto ORM
+        path('consultas9', views_registros.consultar9, name="Consultas9"),
+        path('consultas10', views_registros.consultar10, name="Consultas10"),
+        path('consultas11', views_registros.consultar11, name="Consultas11"),
+        path('consultas12', views_registros.consultar12, name="Consultas12"),
+        path('consultas13', views_registros.consultar13, name="Consultas13"),
+        #Comentarios Contacto SQL
+        path('consultas9SQL', views_registros.consultar9SQL, name="Consultas9SQL"),
+        path('consultas10SQL', views_registros.consultar10SQL, name="Consultas10SQL"),
+        path('consultas11SQL', views_registros.consultar11SQL, name="Consultas11SQL"),
+        path('consultas12SQL', views_registros.consultar12SQL, name="Consultas12SQL"),
+        path('consultas13SQL', views_registros.consultar13SQL, name="Consultas13SQL"),
+        #Archivos
+        path('subir', views_registros.archivos, name="Subir"),
+       
 ]
 if settings.DEBUG:
         from django.conf.urls.static import static
